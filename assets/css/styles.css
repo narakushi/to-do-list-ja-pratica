@@ -3,7 +3,7 @@
 :root {
   --primary-color: #610027;
   --contrast-color: #f22678;
-  --contrast-color-opacity: rgba(242, 38, 120, 0.7);
+  --contrast-color-opacity: rgba(242, 38, 120, 0.65);
   --contrast-color-50: #feeaf2;
   --contrast-color-100: #fbbdd6;
   --linear-bg: linear-gradient(
@@ -111,8 +111,10 @@ body::after {
   font-size: 1.6rem;
 }
 
-.container__body-button:hover {
+.container__body-button:hover,
+.container__container-input button:hover {
   filter: brightness(140%);
+  scale: .9;
 }
 
 .container__body-content {
@@ -143,15 +145,32 @@ body::after {
 }
 
 .container__container-input input {
-  width: 90%;
+  width: 85%;
   border-radius: 1.6rem;
+  outline: none;
+}
+
+.container__container-input input::placeholder {
+  color: var(--contrast-color-100);
 }
 
 .container__container-input button,
 .container__container-input input {
   padding: 1.5rem;
+  background: var(--contrast-color-opacity);
+  backdrop-filter: blur(0.4rem);
+  border: none;
+  color: var(--contrast-color-100);
+  font-size: 1.6rem;
 }
+
 .container__container-input button {
   width: 15rem;
   border-radius: 2.4rem;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.container__container-input input:focus {
+  outline: 0.2rem solid var(--contrast-color-100);
 }
