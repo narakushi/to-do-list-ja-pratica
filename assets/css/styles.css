@@ -146,27 +146,34 @@ body::after {
 }
 
 .single-task__task .checkbox {
-  display: none;
+  position: relative;
+  margin-right: 2rem;
 }
 
- .checkbox + label::before {
+ .checkbox::before {
   content: '';
-  display: inline-block;
+  display: block;
+  position: absolute;
   width: 2rem;
   height: 2rem;
   background-color: var(--contrast-color-50);
   border-radius: 0.3rem;
-  margin-right: 2rem;
-  margin-bottom: -0.2rem;
   cursor: pointer;
 }
 
-.checkbox:checked + label::before{
-  background: #610027;
-  content: "✓";
-  font-size: 1.5rem;
-  text-align: center;
+.checkbox:checked::after{
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  left: 0.6rem;
+  top: 0.4rem;
   text-decoration: line-through;
+  border: solid black;
+  border-width: 0 0.3rem 0.3rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .container__container-input input {
