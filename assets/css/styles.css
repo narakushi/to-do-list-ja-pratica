@@ -12,6 +12,7 @@
     rgba(102, 17, 51, 0.88) 75.14%,
     #610027 100%
   );
+  --linear-check: linear-gradient(120deg, #36DFF1, #2764E7)
   /* --linear-bg: linear-gradient(270deg, #66113300 32%, #661133 57%, #610027 80%); */
 }
 
@@ -133,21 +134,25 @@ body::after {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 1.8rem;
   color: var(--contrast-color-100);
 }
 
-.container__container-input {
-  width: 100%;
-  position: absolute;
+.single-task__task {
+  height: 2rem;
   display: flex;
-  justify-content: space-between;
-  bottom: 0rem;
+}
+
+.single-task__task label {
+  align-self: center;
+  margin-top: .3rem;
 }
 
 .single-task__task .checkbox {
   position: relative;
-  margin-right: 2rem;
+  width: 0.1rem;
+  margin-right: 4rem;
 }
 
  .checkbox::before {
@@ -161,6 +166,14 @@ body::after {
   cursor: pointer;
 }
 
+.checkbox:checked::before {
+  background: var(--linear-check);
+}
+
+.checkbox:checked + label {
+  text-decoration: line-through;
+}
+
 .checkbox:checked::after{
   content: "";
   position: absolute;
@@ -169,11 +182,39 @@ body::after {
   left: 0.6rem;
   top: 0.4rem;
   text-decoration: line-through;
-  border: solid black;
+  border: solid var(--contrast-color-50);
   border-width: 0 0.3rem 0.3rem 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.single-task__icons button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.single-task__icons  {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.single-task__icons span {
+  font-size: 2rem;
+  color: var(--contrast-color-100);
+}
+
+.single-task__icons button:hover {
+  scale: 1.15;
+}
+
+.container__container-input {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0rem;
 }
 
 .container__container-input input {
