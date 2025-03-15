@@ -229,6 +229,8 @@ body::after {
 
 .container__container-input input::placeholder {
   color: var(--contrast-color-100);
+  font-size: 1.8rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .container__container-input button,
@@ -270,9 +272,18 @@ body::after {
 }
 
 @media all and (max-width: 430px){
+
+  .single-task {
+    font-size: 1.6rem;
+  }
+
   .container__container-input {
     flex-direction: column;
     align-items: center;
+  }
+
+  .container__container-input input::placeholder{
+    font-size: 1.6rem;
   }
 
   .container__container-input::placeholder {
