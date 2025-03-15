@@ -120,12 +120,33 @@ body::after {
 .container__body-content {
   background: var(--contrast-color-opacity);
   width: 100%;
+  max-height: 54svh;
   display: flex;
   flex-direction: column;
   gap: 4rem;
   padding: 2.4rem;
   border-radius: 1.6rem;
   backdrop-filter: blur(0.4rem);
+  overflow-y: auto;
+}
+
+.container__body-content::-webkit-scrollbar {
+  background-color: var(--primary-color);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  width: 1rem;
+}
+
+.container__body-content::-webkit-scrollbar-thumb {
+  background: var(--contrast-color);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.content-start {
+  color: var(--contrast-color-100);
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 /*Section task*/
@@ -272,6 +293,10 @@ body::after {
 }
 
 @media all and (max-width: 430px){
+
+  .container__body-content {
+    max-height: 50svh;
+  }
 
   .single-task {
     font-size: 1.6rem;

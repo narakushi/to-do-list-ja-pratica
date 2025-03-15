@@ -18,6 +18,8 @@ const toDoList = () => {
 
   const appendTaskContainer = (task) => {
     if (task) {
+      const contentStart = document.querySelector(".content-start");
+      contentStart.innerText = `Ótimo lista iniciada!🎉`;
       const containerBodyContent = document.querySelector(".container__body-content");
       containerBodyContent.innerHTML += ` 
             <div class="single-task">
