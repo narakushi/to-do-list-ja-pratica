@@ -193,6 +193,7 @@ body::after {
   background: transparent;
   border: none;
   cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 
 .single-task__icons  {
@@ -201,7 +202,7 @@ body::after {
 }
 
 .single-task__icons span {
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: var(--contrast-color-100);
 }
 
@@ -215,12 +216,15 @@ body::after {
   display: flex;
   justify-content: space-between;
   bottom: 0rem;
+  gap: 2rem;
 }
 
 .container__container-input input {
-  width: 85%;
+  width: 100%;
   border-radius: 1.6rem;
   outline: none;
+  padding: 1.5rem;
+  padding-left: 5rem;
 }
 
 .container__container-input input::placeholder {
@@ -229,7 +233,6 @@ body::after {
 
 .container__container-input button,
 .container__container-input input {
-  padding: 1.5rem;
   background: var(--contrast-color-opacity);
   backdrop-filter: blur(0.4rem);
   border: none;
@@ -238,6 +241,7 @@ body::after {
 }
 
 .container__container-input button {
+  padding: 1.5rem;
   width: 15rem;
   border-radius: 2.4rem;
   cursor: pointer;
@@ -248,3 +252,30 @@ body::after {
   outline: 0.2rem solid var(--contrast-color-100);
 }
 
+
+.container__container-input-plus {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.container__container-input-plus span {
+  position: absolute;
+  z-index: 1;
+  font-size: 2.4rem;
+  font-weight: 100;
+  color: var(--contrast-color-100);
+  bottom: 1.2rem;
+  left: 1.2rem;
+}
+
+@media all and (max-width: 430px){
+  .container__container-input {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container__container-input::placeholder {
+    content: 'AAA';
+  }
+}
